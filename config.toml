@@ -7,7 +7,7 @@ preserveTaxonomyNames = true
 
 [params]
     # The name to display as main title in the home page
-    mainpagetitle = "COREDUMP BLOG"
+    mainpagetitle = "COREDUMP BLOG -- WORK IN PROGRESS!!"
 
     # The subtitle to display under the title in the home page
     mainpagesubtitle = "Security Articles and Technology!" 
