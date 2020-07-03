@@ -2,7 +2,7 @@
 title = "Escaping Rbash"
 date = 2020-07-03T09:26:30-04:00
 description = "Escaping a restricted shell on pentests or CTFs"
-draft = true
+draft = false
 tags = [
     "shell",
 ]
