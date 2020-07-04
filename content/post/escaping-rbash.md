@@ -19,3 +19,53 @@ rbash - also known as The Restricted Shell - is a linux shell that has some rest
  * [*]Certain binaries specified by the user who created the rbash environment
  
  You can find the full list and more information on [GNU's rbash reference manual](https://www.gnu.org/software/bash/manual/html_node/The-Restricted-Shell.html)
+
+## Determining if you're in rbash
+You can easily check your current shell using echo:
+
+{{< highlight bash >}}
+$ echo $SHELL
+/bin/rbash
+{{< /highlight >}}
+
+
+If you see rbash, rzsh, lshell, or something similar (look it up if you aren't sure) then you're in a restricted shell. 
+
+## Check your PATH
+
+Because you're in a restricted shell, you'll probably wont have many commands to work with. By viewing which directories are in your PATH, you might be able to escape rbash very quickly. You can check to see the items in your path by running:
+
+{{< highlight bash >}}
+echo $PATH
+{{< /highlight >}}
+
+If you see /bin in your PATH, that means you can run bash to escape rbash instantly:
+
+{{< highlight bash >}}
+/bin/bash -i
+{{< /highlight >}}
+
+It is unlikely that you'll have /bin in your PATH, but it's always worth it to check!
+
+## Text Editors
+Hopefully you'll have the ability to use a text editor of some kind in your restricted shell. If so, you can escape them to enter a non-restricted shell. Here are a few examples:
+
+### Vim
+Open vim, and run the following command:
+
+{{< highlight bash >}}
+:!/bin/bash
+{{< /highlight >}}
+
+### Nano
+Nano can be escaped in a similar way, but requires some keyboard shortcuts to get to the command input (Note: ^R refers to holding CTRL and pressing R).
+Once in nano, use the following shortcuts and commands:
+
+{{< highlight bash >}}
+^R^X
+reset; sh 1>&0 2>&0
+{{< /highlight >}}
+
+## Programming Languages
+
+## Other Binaries
