@@ -48,16 +48,16 @@ If you see /bin in your PATH, that means you can run bash to escape rbash instan
 It is unlikely that you'll have /bin in your PATH, but it's always worth it to check!
 
 ## Text Editors
-Hopefully you'll have the ability to use a text editor of some kind in your restricted shell. If so, you can escape them to enter a non-restricted shell. Here are a few examples:
+Hopefully you'll have the ability to use a text editor of some kind in your restricted shell. If so, you can escape them to enter a unrestricted shell. Here are a few examples:
 
-### Vim
+#### Vim
 Open vim, and run the following command:
 
 {{< highlight bash >}}
 :!/bin/bash
 {{< /highlight >}}
 
-### Nano
+#### Nano
 Nano can be escaped in a similar way, but requires some keyboard shortcuts to get to the command input (Note: ^R refers to holding CTRL and pressing R).
 Once in nano, use the following shortcuts and commands:
 
@@ -67,5 +67,28 @@ reset; sh 1>&0 2>&0
 {{< /highlight >}}
 
 ## Programming Languages
+If you have access to programming languages in your restricted shell, you can use them to your advantage to spawn better unrestricted shells! Note: You can also use these commands to improve foothold shells. 
+
+#### Python
+{{< highlight bash >}}
+python -c "import pty;pty.spawn('/bin/bash')"
+{{< /highlight >}}
+
+#### Ruby
+{{< highlight bash >}}
+ruby -e 'exec "/bin/sh"'
+{{< /highlight >}}
+
+#### PHP
+{{< highlight bash >}}
+export CMD="/bin/sh"
+php -r 'system(getenv("CMD"));'
+{{< /highlight >}}
+
+#### Perl
+{{< highlight bash >}}
+perl -e 'exec "/bin/sh";'
+{{< /highlight >}}
 
 ## Other Binaries
+There are MANY more binaires that you can use to escape your restricted shells. You can find an extensive list of them tagged with "Shell" on [GTFOBins](https://gtfobins.github.io/#+shell)
